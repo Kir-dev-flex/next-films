@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Каталог фильмов
 
-## Getting Started
+Учебный проект по Next.js App Router - Каталог фильмов
 
-First, run the development server:
+## Запуск
 
-```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открыть http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Реализованные функции
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- File-Based Routing — Роутинг через стурктуру и названия папок, Next.js
+- Layouts — Неизменная обертка для страниц, которая не ререндерится при переходе по внутренним ссылкам. Меняются только внутренние компоненты
+- Server Components — Компоненты, которые рендерятся на сервере, клиенту приходит готовый html без лишнего js
+- Client Components — Парочка компонентов, котоыре рисуются в браузере у пользователя, ради useState
+- Promise.all + loading.tsx — параллельная загурзка и скелетон
+- API Routes — REST API эндпоинт внутри Next.js проекта, без отдельного сервера
+- Metadata — динамическая метадата, меняющаяся в зависимости от пути
+- SearchBar — Комопнент, который использует уже запрошенный с сервера список фильмов и сортирует их по вводу
+- .env.local + error.tsx — внутренняя ссылка сохранена в переменную, добавлена кастомная ошибка
 
-## Learn More
+## Структура проекта
 
-To learn more about Next.js, take a look at the following resources:
+app/
+├── page.tsx — главная
+├── catalog/ — каталог фильмов
+├── about/ — страничка "О нас"
+└── api/movies/ — API эндпоинт который возвращает JSON
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+components/
+├── Navbar.tsx
+├── SearchBar.tsx
+└── FavouriteButton.tsx
