@@ -1,35 +1,23 @@
-# Каталог фильмов
+# Film Catalog
 
-Учебный проект по Next.js App Router - Каталог фильмов
+A learning project built with Next.js App Router for browsing a film catalog.
 
-## Запуск
+## Highlights
 
+- File-based routing and nested layouts
+- Server and client components
+- Parallel data loading with `Promise.all`
+- Loading and error states
+- API route integration
+- Dynamic metadata and search experience
+
+## Tech stack
+
+Next.js, React, TypeScript.
+
+## Run locally
+
+```bash
 npm install
 npm run dev
-
-Открыть http://localhost:3000
-
-## Реализованные функции
-
-- File-Based Routing — Роутинг через стурктуру и названия папок, Next.js
-- Layouts — Неизменная обертка для страниц, которая не ререндерится при переходе по внутренним ссылкам. Меняются только внутренние компоненты
-- Server Components — Компоненты, которые рендерятся на сервере, клиенту приходит готовый html без лишнего js
-- Client Components — Парочка компонентов, котоыре рисуются в браузере у пользователя, ради useState
-- Promise.all + loading.tsx — параллельная загурзка и скелетон
-- API Routes — REST API эндпоинт внутри Next.js проекта, без отдельного сервера
-- Metadata — динамическая метадата, меняющаяся в зависимости от пути
-- SearchBar — Комопнент, который использует уже запрошенный с сервера список фильмов и сортирует их по вводу
-- .env.local + error.tsx — внутренняя ссылка сохранена в переменную, добавлена кастомная ошибка
-
-## Структура проекта
-
-app/
-├── page.tsx — главная
-├── catalog/ — каталог фильмов
-├── about/ — страничка "О нас"
-└── api/movies/ — API эндпоинт который возвращает JSON
-
-components/
-├── Navbar.tsx
-├── SearchBar.tsx
-└── FavouriteButton.tsx
+```
